@@ -5,8 +5,9 @@ import { nanoid } from "nanoid";
 import Snippet from "./models/Snippet.js";
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: "*",
+}));app.use(express.json());
 
 const MONGO_URL = process.env.MONGO_URL || "mongodb://mongo:27017/snippetshare";
 
